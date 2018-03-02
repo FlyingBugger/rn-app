@@ -6,10 +6,10 @@
 
 import React, { Component } from 'react';
 import {
-
   StyleSheet,
   Text,
   View,
+  TextInput,
   Image
 } from 'react-native';
 
@@ -27,8 +27,17 @@ export default class App extends Component<Props> {
     return (
       <View style={style.container}>
         {this.renderAllBadge()}
+        <TextInput
+          placeHolder="12"
+          onChange={this.inputChange}
+          keyboardType="number-pad"
+        />
+
       </View>
     );
+  }
+  inputChange(){
+
   }
   renderAllBadge(){
     let views=[];
@@ -38,8 +47,9 @@ export default class App extends Component<Props> {
       views.push(
         <View key={i} style={style.imgOut}>
           <Image source={require("../source/img/1.jpg")} style={style.img}/>
+
           <View style={style.imgText}>
-                <Text >{now.name}</Text>
+                <Text ref="nods">{now.name}</Text>
           </View>
 
         </View>
