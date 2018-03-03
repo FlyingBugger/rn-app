@@ -19,9 +19,11 @@ export default class App extends Component {
     return(
       <View>
           <ScrollView
+              shows
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             pagingEnabled={true}
+
             onMomentumScrollEnd={(e)=>this.onAnimationEnd(e)}
             >
 
